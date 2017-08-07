@@ -1,0 +1,170 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.admin.navigationdrawerapp.ThirdFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="EMI Calculator"
+            android:id="@+id/mortgage_calculator_title"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />x
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Loan Amount"
+            android:id="@+id/amount_borrowed"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/amount_borrowed_field"
+            android:width="40dp"
+            android:textColor="#0c0303"
+            android:inputType="numberDecimal"
+            android:visibility="visible"
+            android:layout_alignTop="@+id/amount_borrowed"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:hint="Amount borrowed"
+            android:layout_toRightOf="@+id/monthly_payment"
+            android:layout_toEndOf="@+id/monthly_payment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Interest Rate"
+            android:id="@+id/interest_rate"
+            android:layout_below="@+id/amount_borrowed"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="55dp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seek_bar"
+            android:indeterminate="false"
+            android:progress="0"
+            android:max="100"
+            android:layout_alignTop="@+id/interest_rate"
+            android:layout_alignLeft="@+id/amount_borrowed_field"
+            android:layout_alignStart="@+id/amount_borrowed_field"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:id="@+id/button"
+            android:textStyle="bold"
+            android:onClick="calculateMonthlyPayment"
+            android:layout_below="@+id/loan_term"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Loan Term"
+            android:id="@+id/loan_term"
+            android:layout_below="@+id/seek_bar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="42dp"
+            android:textStyle="bold" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etDuration"
+            android:width="40dp"
+            android:textColor="#0c0303"
+            android:inputType="numberDecimal"
+            android:visibility="visible"
+            android:layout_below="@+id/seek_bar_val"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/seek_bar"
+            android:layout_alignStart="@+id/seek_bar" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Monthly Payment"
+            android:id="@+id/monthly_payment"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/result_field"
+            android:layout_below="@+id/monthly_payment"
+            android:layout_alignLeft="@+id/monthly_payment"
+            android:layout_alignStart="@+id/monthly_payment"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/seek_bar_val"
+            android:text="0"
+            android:layout_below="@+id/seek_bar"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Total Amount to Pay"
+            android:id="@+id/year_payment"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/result_field"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/result_field_year"
+            android:layout_below="@+id/year_payment"
+            android:layout_alignLeft="@+id/monthly_payment"
+            android:layout_alignStart="@+id/monthly_payment"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
